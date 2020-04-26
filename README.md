@@ -39,12 +39,38 @@ NB: The data set downloaded from the UCI website contains two errors. I have man
 # Iris Flower Species 
 ![](image.jpg)
 
+
  
+# Installations 
+
+The following software and tools were installed
+
+- Anaconda
+- Cmder
+- Visual Studio Code
+
+# Objectives 
+
+- Download the Iris Dataset 
+- Write a program called analysis.py that:
+- - outputs a summary of each variable to a single file 
+- - saves a histogram of each variable to png.file
+- - outputs a scattered plot of each pair of variables 
+
+# Content 
+
+- analysis.py 
+- output.txt (contains the summary of each varible)
+- Image.jpg (iris flower Image)
+- scatter plots.png files 
 
 
 
 
 
+
+
+        
 
 
 
