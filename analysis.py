@@ -24,15 +24,15 @@ print("Description of Data: " "\n", d[d.columns[0:]].describe())
 
 #sy.stdout.close() # Closing output.txt file )
 
-# Plots
+# Histogram plot
 # Writing a program to create a histogram 
 # of each variable within the iris dataset. 
 # each histogram will be saved automatically when running the program
 
-d.plot.hist( subplots=True, bins=30, layout=(2,2)) #creates multiple histograms
-plt.savefig("Histogram of each variable.png") # saves histogram
-plt.show() 
-
-
+d.plot.hist( subplots=True, bins=30, layout=(2,2)) # creating a histogram subplot adjusting bins & layout.
+plt.suptitle("Iris Flower Variables", fontsize = 12) # allows you to add a subtitle to histogram
+plt.tight_layout(rect=[0, 0.03, 1, 0.95]) # prevents data overlapping from png file. 'rect' allows subtitle to fit
+plt.savefig("Histogram.png")
+plt.show()
 
 
