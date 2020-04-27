@@ -76,9 +76,7 @@ I downloaded the data set from the UCI wedsite and saved it as a text file (link
 
 The text file did not include column headings, I created a variable called 'col' to assign headings to the dataset and another variable called 'd' which  assigns the data to the pandas dataframe with pd.read_csv, and reads the text file.
 
-
      col = ['sepal_length', 'sepal_width','petal_length', 'petal_width','species']
-
 
 Reading the file, assigning data to the dataframe and including the column headings: 
 
@@ -88,8 +86,76 @@ To ensure the variables were working correctly I run the code in commandline, wh
 
      sy.stdout = open("output.txt", "w")
 
-
 sy.stdout reference: https://kite.com/python/answers/how-to-redirect-print-output-to-a-text-file-in-python 
+
+
+By using the **Pandas** built in functions I was able to efficiently create the summary of the data.
+Note as I'm saving the printed command to the output.txt file i use "string" and character "\n" (creates a newline), to provide a cleaner visualization of the data. The following built in functions were used: 
+
+- **DataFrame.groupby().size ()** - groupby(); used to split the data into groups, size();returns the number of values in the data. Here I grouped the data by 'species' including size.
+
+          print("SUMMARY OF DATA: ", "\n", d.    groupby('species').size(), "\n")
+
+- **DataFrame.shape** - returns a tuble of the shape of the data i.e the amount of rows and columns.
+
+          print("Count of Columns and Rows: ", d.shape,"\n")
+
+- **DataFrame.head** - returns the first few rows of data. As you will see, I have specified the first 10 rows.
+
+          print("Sample of Data: ", "\n", d.head(10),"\n")
+
+- **DataFrame.Description** - returns the Count, Means, Std, Min, Max, lower and upper percentile. i have also included the list of columns I want to display "d[d.columns[0:]]".
+
+          print("Description of Data: " "\n", d[d.columns[0:]].describe())
+
+I also required the inclusion of the following functions as not all columns were displaying on the printed command*. 
+
+     pd.set_option('display.max_rows', 10)  
+     pd.set_option('display.max_column', 5) 
+
+
+Output:
+
+     SUMMARY OF DATA:  
+     species
+     Iris-setosa        50
+     Iris-versicolor    50
+     Iris-virginica     50
+     dtype: int64 
+
+     Count of Columns and Rows:  (150, 5) 
+
+     Sample of Data:  
+     sepal_length  sepal_width  petal_length  petal_width      species
+     0           5.1          3.5           1.4          0.2  Iris-setosa
+     1           4.9          3.0           1.4          0.2  Iris-setosa
+     2           4.7          3.2           1.3          0.2  Iris-setosa
+     3           4.6          3.1           1.5          0.2  Iris-setosa
+     4           5.0          3.6           1.4          0.2  Iris-setosa
+     5           5.4          3.9           1.7          0.4  Iris-setosa
+     6           4.6          3.4           1.4          0.3  Iris-setosa
+     7           5.0          3.4           1.5          0.2  Iris-setosa
+     8           4.4          2.9           1.4          0.2  Iris-setosa
+     9           4.9          3.1           1.5          0.1  Iris-setosa 
+
+     Description of Data: 
+          sepal_length  sepal_width  petal_length  petal_width
+     count    150.000000   150.000000    150.000000   150.000000
+     mean       5.843333     3.057333      3.758000     1.199333
+     std        0.828066     0.435866      1.765298     0.762238
+     min        4.300000     2.000000      1.000000     0.100000
+     25%        5.100000     2.800000      1.600000     0.300000
+     50%        5.800000     3.000000      4.350000     1.300000
+     75%        6.400000     3.300000      5.100000     1.800000
+     max        7.900000     4.400000      6.900000     2.500000
+     
+
+          
+
+
+
+
+
 
 
 
