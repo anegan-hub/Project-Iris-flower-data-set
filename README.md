@@ -20,6 +20,11 @@ Iris data set - Wikipedia:
 
 https://en.wikipedia.org/wiki/Iris_flower_data_set#Data_set
 
+LDA - wikipedia:
+
+https://en.m.wikipedia.org/wiki/Linear_discriminant_analysis 
+
+
 Iris data set used for this project: 
 
 http://archive.ics.uci.edu/ml/datasets/Iris
@@ -82,15 +87,17 @@ Reading the file, assigning data to the dataframe and including the column headi
 
      d = pd. read_csv ("iris.txt", names=col)
 
-To ensure the variables were working correctly I run the code in commandline, which did produced the full contents of the text file. The next step is creating an output summary of the dataset to a single text file. In order or me to do this, I created a new file called 'output.txt' and saved this to my current directory. I open and write to the text file by using the import 'sys', assigning 'sy.stdout' (standard output), will redirect printed commands to the output.txt file. 
+To ensure the variables were working correctly I run the code on the command line , which did produced the full contents of the text file. The next step is creating an output summary of the dataset to a single text file. In order or me to do this, I created a new file called 'output.txt' and saved this to my current directory. I open and write to the text file by using the import 'sys', assigning 'sy.stdout' (standard output), will redirect printed commands to the output.txt file. 
 
      sy.stdout = open("output.txt", "w")
 
 sy.stdout reference: https://kite.com/python/answers/how-to-redirect-print-output-to-a-text-file-in-python 
 
 
+**Pandas built in functions**
+
 By using the **Pandas** built in functions I was able to efficiently create the summary of the data.
-Note as I'm saving the printed command to the output.txt file i use "string" and character "\n" (creates a newline), to provide a cleaner visualization of the data. The following built in functions were used: 
+Note as I'm saving the printed command to the output.txt file i use "string" and the character "\n" (creates a newline), to provide a cleaner visualization of the data. The following built in functions were used: 
 
 - **DataFrame.groupby().size ()** - groupby(); used to split the data into groups, size();returns the number of values in the data. Here I grouped the data by 'species' including size.
 
@@ -108,37 +115,15 @@ Note as I'm saving the printed command to the output.txt file i use "string" and
 
           print("Description of Data: " "\n", d[d.columns[0:]].describe())
 
-I also required the inclusion of the following functions as not all columns were displaying on the printed command*. 
+ - **Pandas set_options** - this was required as not all columns were displaying on the printed command.
 
-     pd.set_option('display.max_rows', 10)  
-     pd.set_option('display.max_column', 5) 
+          pd.set_option('display.max_rows', 10) 
+          pd.set_option('display.max_column', 5)
 
 
-Output:
+Lets take the printed output of 'Description of data': 
 
-     SUMMARY OF DATA:  
-     species
-     Iris-setosa        50
-     Iris-versicolor    50
-     Iris-virginica     50
-     dtype: int64 
-
-     Count of Columns and Rows:  (150, 5) 
-
-     Sample of Data:  
-     sepal_length  sepal_width  petal_length  petal_width      species
-     0           5.1          3.5           1.4          0.2  Iris-setosa
-     1           4.9          3.0           1.4          0.2  Iris-setosa
-     2           4.7          3.2           1.3          0.2  Iris-setosa
-     3           4.6          3.1           1.5          0.2  Iris-setosa
-     4           5.0          3.6           1.4          0.2  Iris-setosa
-     5           5.4          3.9           1.7          0.4  Iris-setosa
-     6           4.6          3.4           1.4          0.3  Iris-setosa
-     7           5.0          3.4           1.5          0.2  Iris-setosa
-     8           4.4          2.9           1.4          0.2  Iris-setosa
-     9           4.9          3.1           1.5          0.1  Iris-setosa 
-
-     Description of Data: 
+      Description of Data: 
           sepal_length  sepal_width  petal_length  petal_width
      count    150.000000   150.000000    150.000000   150.000000
      mean       5.843333     3.057333      3.758000     1.199333
@@ -148,14 +133,15 @@ Output:
      50%        5.800000     3.000000      4.350000     1.300000
      75%        6.400000     3.300000      5.100000     1.800000
      max        7.900000     4.400000      6.900000     2.500000
-     
-
-          
 
 
 
+So what does the above tell us; from analysing the data, instantly is it clear the medium sepal length of all species combined is longer than the petal length, with the sepal width wider than the petal width. Looking at min and max it is clear the sepal minumum length is 4.3 cm with the maximum length 7.9 cm, the petal length ranging from 1.0 cm to 6.9 cm. The sepal width ranges from 2.0cm to 4.4 cm and petal width ranging from 0.1cm to 2.5 cm. The percentile 50% displays the percentage of data within that range. The summary above provides a description of all species combined so you cannot distinguish the species here. 
 
 
+ 
+ 
+Reference: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html 
 
 
 
