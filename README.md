@@ -136,12 +136,35 @@ Lets take the printed output of 'Description of data':
 
 
 
-So what does the above tell us; from analysing the data, instantly is it clear the medium sepal length of all species combined is longer than the petal length, with the sepal width wider than the petal width. Looking at min and max it is clear the sepal minumum length is 4.3 cm with the maximum length 7.9 cm, the petal length ranging from 1.0 cm to 6.9 cm. The sepal width ranges from 2.0cm to 4.4 cm and petal width ranging from 0.1cm to 2.5 cm. The percentile 50% displays the percentage of data within that range. The summary above provides a description of all species combined so you cannot distinguish the species here. 
+So what does the above tell us; from analysing the data, instantly is it clear the medium sepal length of all species combined is longer than the petal length, with the sepal width wider than the petal width. Looking at min and max it is clear the sepal minumum length is 4.3 cm with the maximum length 7.9 cm, the petal length ranging from 1.0 cm to 6.9 cm. The sepal width ranges from 2.0cm to 4.4 cm and petal width ranging from 0.1cm to 2.5 cm. The percentile 50% displays the percentage of data within that range. The summary above provides a description of all species combined so you cannot distinguish from species here. 
 
 
  
- 
+
 Reference: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html 
+
+
+**Histogram of each variable**
+
+One of the objectives of the project is saving a histogram of each variable to png.file. Upon researching histograms I discovered "Subplots" using the library **Matplotlib**. I have two ways of producing the data 1. Write a code for each variable to display separate histograms, saving to four separate png files 2. Write one piece of code that will display a histogram of each variable to one png.file. I choose the latter as the subplot provides the same date without having to repeat code, with reference to one png.file. 
+
+
+
+**Histogram code**
+
+    d.plot.hist( subplots=True, bins=12, layout=(2,2))
+     plt.suptitle("Iris Flower Variables", fontsize = 12) 
+     plt.tight_layout(rect=[0, 0.03, 1, 0.95])
+     plt.savefig("Histogram.png")
+     plt.show()
+
+
+**Histogram Output**
+
+![](Histogram.png)
+
+
+
 
 
 
