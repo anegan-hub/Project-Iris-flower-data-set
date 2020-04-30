@@ -91,7 +91,7 @@ To ensure the variables were working correctly I run the code on the command lin
 
      sy.stdout = open("output.txt", "w")
 
-sy.stdout reference: https://kite.com/python/answers/how-to-redirect-print-output-to-a-text-file-in-python 
+***sy.stdout reference:*** https://kite.com/python/answers/how-to-redirect-print-output-to-a-text-file-in-python 
 
 
 **Pandas built in functions**
@@ -141,18 +141,18 @@ So what does the above tell us; from analysing the data, instantly is it clear t
 
  
 
-Reference: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html 
+***Reference:*** https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html
 
 
 **Histogram of each variable**
 
-One of the objectives of the project is saving a histogram of each variable to png.file. Upon researching histograms I discovered "Subplots" using the library **Matplotlib**. I have two ways of producing the data 1. Write a code for each variable to display separate histograms, saving to four separate png files 2. Write one piece of code that will display a histogram of each variable to one png.file. I choose the latter as the subplot provides the same date without having to repeat code, with reference to one png.file. 
+One of the objectives of the project is saving a histogram of each variable to png.file. The historgram would be an  Univariate analysis as only one variable is used. The historgram displays the distribution of each Variable separately to display the frequency and  measurement range. Upon researching histograms I discovered "Subplots" using the libraries **Matplotlib / Pandas**. I have two ways of producing the data 1. Write a code for each variable to display separate histograms, saving to four separate png files 2. Write one piece of code that will display a histogram of each variable to one png.file. I choose the latter as the subplot provides the same data without having to repeat code, and references only one png.file. 
 
 
 
 **Histogram code**
 
-    d.plot.hist( subplots=True, bins=12, layout=(2,2))
+     d.plot.hist( subplots=True, bins=12, layout=(2,2))
      plt.suptitle("Iris Flower Variables", fontsize = 12) 
      plt.tight_layout(rect=[0, 0.03, 1, 0.95])
      plt.savefig("Histogram.png")
@@ -162,6 +162,31 @@ One of the objectives of the project is saving a histogram of each variable to p
 **Histogram Output**
 
 ![](Histogram.png)
+
+From the above data visualization of variables petal length and petal width shows a separation difference of distribution to that of sepal length and sepal width between 0-2cm and 3cm - 7cms with petal width distribution. Lets look into this further. 
+
+
+***Reference:***
+
+**Scattered Plots**
+
+Pairing each variable by using scattered plots, will help in visualization and analysis of a relationship between each variable. 
+
+
+***Sepal length vs Sepal width***
+
+![](SepalPlot.png)
+
+
+***Petal length vs Sepal width***
+
+![](PetalPlot.png)
+
+
+The Iris Dataset is all about determining which species the iris flower belongs. By comparing the data of the sepal length, sepal width, petal length and petal width to see if relationships between all, exists. This is true for the Iris dataset. It is clear from the data, Setosa is linearly separable from both Vericolor and Virginica, with Vericolor and Virginica having a small overlap, 
+
+I found the data visualization of this project emtremely useful in my own understanding of the dataset. By breaking down the data, display this data within a histogram and scattorplots, in my own opinion, the petal length and petal width are clear inidicators in determining the classification of the Iris Flower. 
+
 
 
 
