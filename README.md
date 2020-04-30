@@ -3,11 +3,9 @@
 
 # Introduction 
 
-The Iris data set or fishers iris data set is a multivariable set introducted by biologist Ronald Fisher in 1939. The data set is based on the 3 species of the Iris Flower and consists of 50 samples of each species: 
-
+The Iris data set or fishers Iris data set is a multivariable set introducted by the British Statistician & Biologist Ronald Fisher in his 1936 paper. The data set is based on the 3 species of the Iris Flower and consists of 50 samples of each species: 
 
 ***Iris Setosa, Iris Virginica and Iris Versicolor.*** 
-
 
 The data set contains 5 varaibles; sepal length, sepal width, petal length, petal width and species, with 150 rows of data, measured in centimeters. It is from the data recorded under the length and width of the sepal and petal that determines the type (species) of the Iris flower.
 
@@ -37,7 +35,21 @@ NB: The data set downloaded from the UCI website contains two errors. I have man
 ![](image.jpg)
 
 
+# Content 
+- Installations 
+- Objectives    
+#### Description 
+- Downloading dataset
+- Importing Libraries
+- Reading the dataset
+- Pandas built in functions
+- Histogram of each variable
+- Scattered Plot of each pair of variables 
+#### Conclusion 
+#### References 
+
  
+
 # Installations 
 
 The following software and tools were installed
@@ -55,30 +67,19 @@ The following software and tools were installed
 - - saves a histogram of each variable to png.file
 - - outputs a scattered plot of each pair of variables 
 
-# Content 
-## Description 
-- Downloading dataset
-- Importing Libraries
-- Reading the dataset
-- Pandas built in functions
-- Histogram of each variable
-- Scattered Plot of each pair of variables 
-## Conclusion 
-## References 
-
 
 
 # Description 
 
 ## Downloading dataset
 
-I downloaded the data set from the UCI wedsite and saved it as a text file (link above). The dataset consists of 150 rows of data and 5 columns. Row; 50 samples from each of the three species. Columns; the first four columns contain measurements (in centimeters) of the sepal length, sepal width, petal length and petal length, with the last column assigning the type of species (iris setosa, Iris Virginica and Iris Vericolor).
+I downloaded the data set from the UCI wedsite and saved it as a text file (link above). The dataset consists of 150 rows and 5 columns. Row; 50 samples from each of the three species. Columns; the first four columns contain measurements (in centimeters) of the sepal length, sepal width, petal length and petal width, with the last column assigning the type of species (Iris setosa, Iris Virginica and Iris Vericolor).
 
 ## Importing Libraries
 
 - **import pandas as pd** ; provides objects such as Dataframes, which are useful when analysing data.
 - **import sys as sy** ; system-specific parameter and functions. Used in this project for redirecting print output to a text file. 
-- **import matplotlib.pyplot as plt**; is a ploting library for python.
+- **import matplotlib.pyplot as plt**; is a plotting library for python.
 - **import numpy as np** ; provides objects for multi-dimensional arrays.
 - **import seaborn as sns**; is a data visualization liberty based on matplotlib.
 
@@ -92,7 +93,7 @@ Reading the file, assigning data to the dataframe and including the column headi
 
      d = pd. read_csv ("iris.txt", names=col)
 
-To ensure the variables were working correctly I run the code on the command line , which did produced the full contents of the text file. The next step is creating an output summary of the dataset to a single text file. In order or me to do this, I created a new file called 'output.txt' and saved this to my current directory. I open and write to the text file by using the import 'sys', assigning 'sy.stdout' (standard output), will redirect printed commands to the output.txt file. 
+To ensure the variables were working correctly I run the code on the command line , which did produced the full contents of the text file. The next step is creating an output summary of the dataset to a single text file. In order or me to do this, I created a new file called 'output.txt' and saved this to my current directory. I open and write to the text file by using the import 'sys', assigning 'sy.stdout' (standard output), this will redirect printed commands to the output.txt file. 
 
      sy.stdout = open("output.txt", "w")
 
@@ -100,7 +101,7 @@ To ensure the variables were working correctly I run the code on the command lin
 ## Pandas built in functions
 
 By using the **Pandas** built in functions I was able to efficiently create the summary of the data.
-Note as I'm saving the printed command to the output.txt file i use "string" and the character "\n" (creates a newline), to provide a cleaner visualization of the data. The following built in functions were used: 
+Note, as I'm saving the printed command to the output.txt file, i use "string" and the character "\n" (creates a newline), to provide a clean visualization of the data. The following built in functions were used: 
 
 - **DataFrame.groupby().size ()** - groupby(); used to split the data into groups, size();returns the number of values in the data. Here I grouped the data by 'species' including size.
 
@@ -139,12 +140,12 @@ Lets take the printed output of 'Description of data':
 
 
 
-So what does the above tell us; from analysing the data, instantly is it clear the medium sepal length of all species combined is longer than the petal length, with the sepal width wider than the petal width. Looking at min and max it is clear the sepal minumum length is 4.3 cm with the maximum length 7.9 cm, the petal length ranging from 1.0 cm to 6.9 cm. The sepal width ranges from 2.0cm to 4.4 cm and petal width ranging from 0.1cm to 2.5 cm. The percentile 50% displays the percentage of data within that range. The summary above provides a description of all species combined so you cannot distinguish from species here. 
+So what does the above tell us; from analysing the data, instantly is it clear the medium sepal length of all species combined is longer than the petal length, with the sepal width wider than the petal width. Looking at min and max the sepal minumum length is 4.3cm with the maximum length 7.9cm; the petal length ranges from 1.0cm to 6.9cm. The sepal width ranges from 2.0cm to 4.4cm; petal width ranging from 0.1cm to 2.5cm. The percentile 50% displays the percentage of data within that range. The summary above provides a description of all species combined.
 
 
 ## Histogram of each variable
 
-One of the objectives of the project is saving a histogram of each variable to png.file. The historgram would be an  Univariate analysis as only one variable is used. The historgram displays the distribution of each Variable separately to display the frequency and  measurement range. Upon researching histograms I discovered "Subplots" using the libraries **Matplotlib / Pandas**. I have two ways of producing the data 1. Write a code for each variable to display separate histograms, saving to four separate png files 2. Write one piece of code that will display a histogram of each variable to one png.file. I choose the latter as the subplot provides the same data without having to repeat code, and references only one png.file. 
+One of the objectives of the project is saving a histogram of each variable to png.file. The histogram is an example of Univariate analysis as only one variable is used. The histogram displays the distribution of each variable separately to display the frequency and measurement range. Upon researching histograms I discovered "Subplots". Using the libraries **Matplotlib / Pandas**, I have two ways of producing the data 1. Write a code for each variable to display separate histograms, saving to four separate png files 2. Write one piece of code that will display a histogram of each variable to one png.file. I choose the latter, as repeated code was not used; with reference to one png.file. 
 
 
 
@@ -161,7 +162,7 @@ One of the objectives of the project is saving a histogram of each variable to p
 
 ![](Histogram.png)
 
-From the above data visualization of variables petal length and petal width shows a separation difference of distribution to that of sepal length and sepal width between 0-2cm and 3cm - 7cms with petal width distribution. Lets look into this further. 
+From the above data visualization of variables petal length and petal width, shows a difference of distribution to that of sepal length and sepal width. Lets look into this further. 
 
 
 ## Scattered Plot of each pair of variables 
@@ -178,21 +179,24 @@ From the above data visualization of variables petal length and petal width show
 
 
 
-Pairing each variable by using scattered plots, will help in visualization and analysis of a relationship between each variable. 
+Pairing each variable by using scattered plots, will help in visualizing and analysis of a relationship between each variable. Here i have used seaborn to include the species colour encoding.
 
 ![](SepalPlot.png)
+
+From the above I can distinghish Setosa from the other two species; however, there is still a nice mix between Vericolor and Virginica.
 
 
 
 ![](PetalPlot.png)
 
+From analyzing the plot of petal length vs petal width, gives a better visualization of each species. Setosa is defined whereas Vericolor and Virginica still have some blend; however, the comparsion is clearer to that of sepal length vs sepal width.
 
 
 # Conclusion 
 
-The Iris Dataset is all about determining which species the iris flower belongs. By comparing the data of the sepal length, sepal width, petal length and petal width to see if relationships between all, exists. This is true for the Iris dataset. It is clear from the data, Setosa is linearly separable from both Vericolor and Virginica, with Vericolor and Virginica having a small overlap, 
+The Iris Dataset is about determining to which of the species the Iris flower belongs. By comparing the data of the sepal length, sepal width, petal length and petal width to see if a correlation exists. This is true for the Iris dataset. It is from from data, visualization and analysis; Setosa is linearly separable from both Vericolor and Virginica, with Vericolor and Virginica having a minimal mix. 
 
-I found the data visualization of this project emtremely useful in my own understanding of the dataset. By breaking down the data, display this data within a histogram and scattorplots, in my own opinion, the petal length and petal width are clear inidicators in determining the classification of the Iris Flower. 
+I found the data visualization of this project emtremely useful in my own understanding of the dataset; by breaking down the data, step by step, displaying the data within a histogram and scattorplot, in my own opinion, the petal length and petal width are strong inidicators in determining the classification of the Iris Flower. 
 
 # References
 
