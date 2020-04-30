@@ -183,18 +183,18 @@ Pairing each variable by using scattered plots, will help in visualizing and ana
 
 ![](SepalPlot.png)
 
-From the above I can distinghish Setosa from the other two species; however, there is still a nice mix between Vericolor and Virginica.
+From the above I can distinghish Setosa from the other two species; however, there is still a nice mix between Versicolor and Virginica.
 
 
 
 ![](PetalPlot.png)
 
-From analyzing the plot of petal length vs petal width, gives a better visualization of each species. Setosa is defined whereas Vericolor and Virginica still have some blend; however, the comparsion is clearer to that of sepal length vs sepal width.
+From analyzing the plot of petal length vs petal width, gives a better visualization of each species. Setosa is defined whereas Versicolor and Virginica still have some blend; however, the comparsion is clearer to that of sepal length vs sepal width.
 
 
 # Conclusion 
 
-The Iris Dataset is about determining to which of the species the Iris flower belongs. By comparing the data of the sepal length, sepal width, petal length and petal width to see if a correlation exists. This is true for the Iris dataset. It is from from data, visualization and analysis; Setosa is linearly separable from both Vericolor and Virginica, with Vericolor and Virginica having a minimal mix. 
+The Iris Dataset is about determining to which of the species the Iris flower belongs. By comparing the data of the sepal length, sepal width, petal length and petal width to see if a correlation exists. This is true for the Iris dataset. It is from data, visualization and analysis; Setosa is linearly separable from both Versicolor and Virginica, with Versicolor and Virginica having a minimal mix. 
 
 I found the data visualization of this project emtremely useful in my own understanding of the dataset; by breaking down the data, step by step, displaying the data within a histogram and scattorplot, in my own opinion, the petal length and petal width are strong inidicators in determining the classification of the Iris Flower. 
 
